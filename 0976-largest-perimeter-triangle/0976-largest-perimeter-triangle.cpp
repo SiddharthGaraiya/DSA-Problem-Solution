@@ -3,7 +3,7 @@ public:
     int largestPerimeter(vector<int>& nums) {
         int n = nums.size();
         
-        sort(nums.begin(),nums.end());
+        sort(begin(nums),end(nums));
         int i=n-3;
         for (i;i>=0;i--){
             if (nums[i]+nums[i+1]>nums[i+2]){
