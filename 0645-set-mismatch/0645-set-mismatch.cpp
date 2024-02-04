@@ -1,22 +1,23 @@
 class Solution {
 public:
-    std::vector<int> findErrorNums(std::vector<int>& nums) {
-        int dup = -1, missing = -1;
+    vector<int> findErrorNums(vector<int>& nums) {
+        int n=nums.size();
+        int dup=-1;
+        int missing=-1;
         
-        for (int i = 1; i <= nums.size(); i++) {
-            int count = 0;
-            for (int j = 0; j < nums.size(); j++) {
-                if (nums[j] == i) {
-                    count++;
-                }
-            }
-            if (count == 2) {
-                dup = i;
-            } else if (count == 0) {
-                missing = i;
+        for (int i=0;i<n;i++){
+            int idx=(abs(nums[i])-1);
+            if (nums[idx]<0){
+                dup=abs(nums[i]);
+            }else{
+                nums[idx]*=-1;
             }
         }
         
-        return {dup, missing};
+        for (int i=0;i<n;i++){
+            if (nums[i]>0) missing =i+1;
+        }
+        
+        return {dup,missing};
     }
 };
