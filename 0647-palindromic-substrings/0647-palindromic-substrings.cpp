@@ -1,30 +1,30 @@
 class Solution {
 public:
-    int arr[1001][1001];
-    bool check(string&s ,int i,int j){
-        if (i>j){
-            return true;
-        }
-        if (arr[i][j]!=-1)
-            return arr[i][j];
-        if (s[i]==s[j]){
-            return arr[i][j]=check(s,i+1,j-1);
-        }
-        return arr[i][j]=false; 
-    }
-    
-    
     int countSubstrings(string s) {
-        int n =s.size();
-        int count=0;
-        memset(arr,-1,sizeof(arr));
-        for (int i =0;i<n;i++){
-            for (int j =i;j<n;j++){
-                bool b=check(s,i,j);
-                if (b) count++;
+        int n =s.length();
+        vector<vector<bool>> t (n,vector<bool>(n,false));
+        // state
+        // t[i][j] is a substring from i to j if it is true substring is palindromic else not
+        
+        int count =0;
+        
+        for (int l=1;l<=n;l++){
+            for (int i = 0;i+l-1<n;i++){
+                int j =i+l-1;
+                
+                if (i==j)
+                    t[i][j]=true;
+                else if (i+1==j)
+                {
+                    t[i][j]=(s[i]==s[j]);
+                }
+                else {
+                    t[i][j]=(s[i]==s[j]&&t[i+1][j-1]);
+                }
+                
+                if (t[i][j]==true)count++;
             }
         }
-        
         return count;
     }
 };
