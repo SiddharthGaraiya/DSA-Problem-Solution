@@ -2,12 +2,17 @@
 
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
+
 <pre><strong>Input:</strong> s = "Let's take LeetCode contest"
 <strong>Output:</strong> "s'teL ekat edoCteeL tsetnoc"
-</pre><p><strong class="example">Example 2:</strong></p>
-<pre><strong>Input:</strong> s = "God Ding"
-<strong>Output:</strong> "doG gniD"
 </pre>
+
+<p><strong class="example">Example 2:</strong></p>
+
+<pre><strong>Input:</strong> s = "Mr Ding"
+<strong>Output:</strong> "rM gniD"
+</pre>
+
 <p>&nbsp;</p>
 <p><strong>Constraints:</strong></p>
 
