@@ -5,7 +5,10 @@ public:
         long long int sum = 0;
         for (int & i : chalk){
             sum += i;
+            if (sum > k)
+                break;
         }
+        
         k = k % sum;
         
         int i = 0;
