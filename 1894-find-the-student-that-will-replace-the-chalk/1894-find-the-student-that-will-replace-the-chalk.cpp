@@ -9,10 +9,10 @@ public:
         k = k % sum;
         
         int i = 0;
-        while(chalk[i%n]<=k){
-            k-=chalk[i%n];
+        while(chalk[i]<=k){
+            k-=chalk[i];
             i++;
         }
-        return i%n;
+        return i;
     }
 };
