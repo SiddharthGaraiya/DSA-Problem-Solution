@@ -14,7 +14,6 @@ public:
         if (n < 0) {
             x = 1 / x;
         }
-        long a = labs(n);
         return solve(x, n);
     }
 };
