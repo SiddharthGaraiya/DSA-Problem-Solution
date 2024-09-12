@@ -5,7 +5,7 @@ public:
             return 1;
         double nb = solve(x, n / 2);
         nb *= nb;
-        if (n % 2 != 0)
+        if (n % 2 )
             nb *= x;
         return nb;
     }
