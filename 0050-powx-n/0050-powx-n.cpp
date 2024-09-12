@@ -1,12 +1,10 @@
 class Solution {
 public:
     double solve(double x, int n) {
-        if (n == 0)
-            return 1;
+        if (!n) return 1;
         double nb = solve(x, n / 2);
         nb *= nb;
-        if (n % 2 )
-            nb *= x;
+        if (n % 2 )nb *= x;
         return nb;
     }
 
